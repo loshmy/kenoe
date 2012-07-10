@@ -332,12 +332,12 @@ function smanjuj_rect() {
     con_mess.beginPath();
 
     if (a >= pos_a) {
-        pos_a += 5;
+        pos_a += 10;
     }
 
 
     if (b >= pos_b) {
-        pos_b += 5;
+        pos_b += 10;
     }
 
     con_mess.rect(pos_b, pos_a, mess_x-3, mess_y-3);
@@ -376,7 +376,7 @@ function smanjuj_rect() {
         return;
     }
     else {
-        if(array[start_i].broj%10==0){
+        /*if(array[start_i].broj%10==0){
 
             pos_a = a;
             pos_b = b;
@@ -398,9 +398,9 @@ function smanjuj_rect() {
             con_mess.clearRect(0, 0, can_mess.width, can_mess.height);
             return;
         }
-        else{
+        else{*/
         ponovi_rect_s();
-        }
+        
     }
 }
 
