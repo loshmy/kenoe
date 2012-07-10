@@ -36,7 +36,7 @@ function zapamtiSliku() {
         animacija(0);
 
     };
-    ship.src = "../new/images/slika1.png";
+    ship.src = "images/slika1.png";
 
 }
 
@@ -88,6 +88,6 @@ function zapamtiSlikuD() {
         animacijaD(0);
 
     };
-    ship.src = "../new/images/slika2.png";
+    ship.src = "images/slika2.png";
 
 }

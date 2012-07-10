@@ -18,7 +18,7 @@ function zapamtiSlikuLoading() {
     
         animacijaLoading(0);
     };
-    shipLoading.src = "../new/images/LoadingCircleOld.png";
+    shipLoading.src = "images/LoadingCircleOld.png";
 }
 
 function animacijaLoading(i) {
