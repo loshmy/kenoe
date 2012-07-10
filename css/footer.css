@@ -1,0 +1,121 @@
+﻿footer 
+{
+  
+background-image: linear-gradient(top, rgb(0,0,0) 7%, rgb(0,102,32) 96%);
+background-image: -o-linear-gradient(top, rgb(0,0,0) 7%, rgb(0,102,32) 96%);
+background-image: -moz-linear-gradient(top, rgb(0,0,0) 7%, rgb(0,102,32) 96%);
+background-image: -webkit-linear-gradient(top, rgb(0,0,0) 7%, rgb(0,102,32) 96%);
+background-image: -ms-linear-gradient(top, rgb(0,0,0) 7%, rgb(0,102,32) 96%);
+
+background-image: -webkit-gradient(
+	linear,
+	left top,
+	left bottom,
+	color-stop(0.07, rgb(0,0,0)),
+	color-stop(0.96, rgb(0,102,32)));
+
+}
+
+#clear
+{
+    
+    left:-540px;
+    top:-13px;
+    
+}
+
+#play 
+{
+
+   
+    left:155px;
+}
+
+#play5
+{
+    
+    left:155px;
+}
+
+#play10
+{
+   
+    left:155px;
+}
+
+#play:hover
+{
+  -webkit-transform:scale(1.1);  
+}
+
+#clear:hover
+{
+   -webkit-transform:scale(1.1); 
+}
+#play5:hover
+{
+  -webkit-transform:scale(1.1);  
+}
+#play10:hover
+{
+  -webkit-transform:scale(1.1);  
+}
+
+#bet
+{
+    background-image: linear-gradient(bottom, rgb(10,118,1) 20%, rgb(36,154,27) 60%, rgb(65,185,54) 80%);
+background-image: -o-linear-gradient(bottom, rgb(10,118,1) 20%, rgb(36,154,27) 60%, rgb(65,185,54) 80%);
+background-image: -moz-linear-gradient(bottom, rgb(10,118,1) 20%, rgb(36,154,27) 60%, rgb(65,185,54) 80%);
+background-image: -webkit-linear-gradient(bottom, rgb(10,118,1) 20%, rgb(36,154,27) 60%, rgb(65,185,54) 80%);
+background-image: -ms-linear-gradient(bottom, rgb(10,118,1) 20%, rgb(36,154,27) 60%, rgb(65,185,54) 80%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.2, rgb(10,118,1)),
+	color-stop(0.6, rgb(36,154,27)),
+	color-stop(0.8, rgb(65,185,54))
+);
+width:120px;
+height:50px;
+z-index:0;
+position:relative;
+top:-68px;
+left:150px;
+-webkit-box-shadow: 2px 2px 2px white;
+
+border:2px solid White;
+}
+
+#strelicaLeva
+{
+  
+    left:180px;
+}
+
+#strelicaDesna
+{
+  
+    left:120px;
+}
+
+.strelice 
+{
+     position:relative;
+    width:50px;
+    top:-68px;
+    z-index:10;
+}
+
+.dugmici
+{
+    position:relative;
+    top:-68px;
+    width:120px;
+    
+}
+.strelice:hover
+{
+     -webkit-transform:scale(1.1);  
+}
