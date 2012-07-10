@@ -221,21 +221,9 @@ function clean_v2() {
         }
     }
 }
-
-
-
 function clean_mid_can() {
     con_mess.clearRect(0, 0, can_mess.width, can_mess.height);
 }
-
-
-
-
-
-
-
-
-
 
 //--------------CANVAS MID MESSAGE
 
@@ -273,8 +261,6 @@ function prikaz() {
    pos_a = 0;
    pos_b = 0;
     crtaj_rect();
-
-
 }
 
 function crtaj_rect() {
@@ -403,43 +389,6 @@ function smanjuj_rect() {
         
     }
 }
-
-
-
-
-
-//---------------------HITS PAYOUT-------------------
-/*function crtaj_left() {
-    can_left = document.getElementById("left_tab");
-    con_left = can_left.getContext("2d");
-
-    con_left.beginPath();
-    con_left.moveTo(can_left.width / 2, 20);
-    con_left.lineTo(can_left.width / 2, can_left.height - 20);
-    con_left.stroke();
-    con_right.beginPath();
-    con_right.moveTo(20, 60);
-    con_right.lineTo(can_right.width - 20, 60);
-    con_right.stroke();
-    
-
-}
-function crtaj_right() {
-    can_right = document.getElementById("right_tab");
-    con_right = can_right.getContext("2d");
-
-    con_right.beginPath();
-    con_right.moveTo(can_right.width / 2, 20);
-    con_right.lineTo(can_right.width / 2, can_right.height - 20);
-    con_right.stroke();
-    
-   
-        
-    
-
-}
-
-*/
 
 
 

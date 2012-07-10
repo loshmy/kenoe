@@ -29,7 +29,6 @@ function popuni() {
     contextL.fillStyle = "white";
     contextL.fillText("PAYOUT", canvasL.width - 57, 28);
 
-
 }
 function upisi(h, p) {
     contextL.beginPath();
@@ -44,18 +43,14 @@ function upisi(h, p) {
     y1 += 18;
 }
 function pokreni() {
-    canvasL = document.getElementById("canvas");
-    contextL = canvasL.getContext("2d");
-
-    canvas_D_tab = document.getElementById("canvas1");
-    context_D_tab = canvas_D_tab.getContext("2d");
+    
 
     contextL.clearRect(0, 0, canvasL.width, canvasL.height);
     y1 = 48;
     var k = 0;
     for (i = 0; i < niz_mid.length; i++) { if (niz_mid[i] != "") { k++; } }
 
-    popuni();
+   popuni();
     $(Objekat.Payments).each(function () {
         var sn = this.SelectedNumber;
 
@@ -97,9 +92,6 @@ function popuni_desno_tab() {
     context_D_tab.strokeStyle = "white";
     context_D_tab.fillStyle = "white";
     context_D_tab.fillText("HITS", canvas_D_tab.width - 32, 28);
-
-
-
 }
 
 function upisi2(h, p) {
