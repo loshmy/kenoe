@@ -8,19 +8,22 @@ var m_i = 0;
 
 $(document).ready(function () {
 
-m_can = document.getElementById("cancan");
-m_ctx = canvas.getContext("2d");
+m_can = document.getElementById("kankan");
+m_ctx = m_can.getContext("2d");
 m_cx=m_can.width/2;
 m_cy = m_can.height / 2;
-$("#cancan").hide();
+$("#kankan").hide();
 
 
 });
 
 function PlaceYouBet() {
     m_i += 1;
-    m_ctx = clearRect(0, 0, m_can.width, m_can.height);
-    $("#cancan").show();
+    m_ctx.clearRect(0, 0, m_can.width, m_can.height);
+    $("#kankan").show();
+
+    $(kankan).css("visibility", "visible"); // PRIKAZIVANJE KANVASA
+
     // console.log("u funkciji sam")
     m_ctx.beginpath();
 
@@ -32,14 +35,16 @@ function PlaceYouBet() {
     m_ctx.fillText("PLEASE, PLACE YOUR BETS!", m_cx, m_cy);
     setTimeout(function () { if (m_i < 33) { m_ctx.clearRect(0, 0, m_can.width, m_can.height); } }, 13);
     setTimeout(function () { if (m_i < 33) { PlaceYouBet(); } else { resetuj() } }, 14);
-    setTimeout(function () { $("cancan").hide(); }, 3000);
+    setTimeout(function () { $("kankan").hide(); }, 3000);
 
 }
 
 function youWin() {
+
+    $(kankan).css("visibility", "visible");
     m_won++;
-    m_ctx = clearRect(0, 0, m_can.width, m_can.height);
-    $("#cancan").show();
+    m_ctx.clearRect(0, 0, m_can.width, m_can.height);
+    $("#kankan").show();
 
     m_ctx.beginPath();
 
@@ -51,13 +56,15 @@ function youWin() {
     m_ctx.fillText("YOU WIN!", m_cx.width / 2, m_cy.height / 2);
     setTimeout(function () { if (m_won < 4) { m_ctx.clearRect(0, 0, m_can.width, m_can.height); } }, 200);
     setTimeout(function () { if (m_won < 4) { youWin(); } else { resetuj(); } }, 500);
-    setTimeout(function () { $("cancan").hide(); }, 3000);
+    setTimeout(function () { $("kankan").hide(); }, 3000);
 }
 
 function gameOver() {
+
+    //$(kankan).css("visibility", "visible");
     m_lose++;
-    m_ctx = clearRect(0, 0, m_can.width, m_can.height);
-    $("#cancan").show();
+    m_ctx.clearRect(0, 0, m_can.width, m_can.height);
+    $(kankan).show();
 
     m_ctx.beginPath();
 
@@ -68,7 +75,7 @@ function gameOver() {
      m_ctx.fillText("YOU LOSE!", m_can.width / 2,m_can.height / 2);
      setTimeout(function () { if (m_lose < 4) { m_ctx.clearRect(0, 0, m_can.width, m_can.height); } }, 200);
      setTimeout(function () { if (m_lose < 4) { gameOver(); } else { resetuj(); } }, 500);
-     setTimeout(function () { $("cancan").hide(); }, 3000);
+     setTimeout(function () { $("kankan").hide(); }, 3000);
 }
 
 function resetuj() {
