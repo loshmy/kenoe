@@ -21,11 +21,11 @@ function playaa() {
     startGame();    
 }
 
-function play5() {
+function play5a() {
     start5Game();
 }
 
-function play10() {
+function play10a() {
     start10Game();
 }
 
