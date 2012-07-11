@@ -93,6 +93,14 @@
     <img src="images/strelicaGore.png" id="strelicaDesna" class="strelice" onclick="povecajUlog()"/>
 </footer>
 
+<section id="tabla">
+    <script>
+        crtaj_mid();
+    </script>
+</section>
+
+<canvas  id="kankan"  width="415px" height="320px" ></canvas>
+
 <div id="fb-root"> </div>
      <div id="FacebookCallToActions">
 		<a class="button" href="#" id="InviteCallToAction">INVITE YOUR FRIENDS</a>
@@ -110,13 +118,7 @@
     </div>
     <a href="#" onclick='iscrtajget();'>Action!</a>
 
-<section id="tabla">
-    <script>
-        crtaj_mid();
-    </script>
-</section>
 
-<canvas  id="kankan"  width="415px" height="320px" ></canvas>
 <!--
 </div>
     <div id="pause">
