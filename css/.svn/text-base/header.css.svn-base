@@ -1,0 +1,60 @@
+﻿#desniLogo
+{
+
+ position:relative;
+ left:40px;
+}
+
+#leviLogo
+{
+position:relative;
+left:-40px;
+}
+
+header
+{
+    background-image: linear-gradient(bottom, rgb(0,0,0) 7%, rgb(0,102,32) 96%);
+background-image: -o-linear-gradient(bottom, rgb(0,0,0) 7%, rgb(0,102,32) 96%);
+background-image: -moz-linear-gradient(bottom, rgb(0,0,0) 7%, rgb(0,102,32) 96%);
+background-image: -webkit-linear-gradient(bottom, rgb(0,0,0) 7%, rgb(0,102,32) 96%);
+background-image: -ms-linear-gradient(bottom, rgb(0,0,0) 7%, rgb(0,102,32) 96%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.07, rgb(0,0,0)),
+	color-stop(0.96, rgb(0,102,32)));
+}
+
+
+#credit
+{
+ 
+
+position:relative;
+top:-30px;
+border:3px solid White;
+ border-radius: 20px;
+   
+   
+    background-image: linear-gradient(bottom, rgb(10,118,1) 20%, rgb(36,154,27) 60%, rgb(65,185,54) 80%);
+background-image: -o-linear-gradient(bottom, rgb(10,118,1) 20%, rgb(36,154,27) 60%, rgb(65,185,54) 80%);
+background-image: -moz-linear-gradient(bottom, rgb(10,118,1) 20%, rgb(36,154,27) 60%, rgb(65,185,54) 80%);
+background-image: -webkit-linear-gradient(bottom, rgb(10,118,1) 20%, rgb(36,154,27) 60%, rgb(65,185,54) 80%);
+background-image: -ms-linear-gradient(bottom, rgb(10,118,1) 20%, rgb(36,154,27) 60%, rgb(65,185,54) 80%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.2, rgb(10,118,1)),
+	color-stop(0.6, rgb(36,154,27)),
+	color-stop(0.8, rgb(65,185,54))
+);
+-webkit-box-shadow: 3px 3px 3px 3px white;
+
+}
+
+
+

@@ -1,65 +1,46 @@
-﻿<!DOCTYPE html >
-
-<html>
-
-<head>
+﻿<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US"
+      xmlns:fb="https://www.facebook.com/2008/fbml"> 
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# keno-greenteam: http://ogp.me/ns/fb/keno-greenteam#">
+  <meta property="fb:app_id" content="102088773270632" /> 
+  <meta property="og:type"   content="keno-greenteam:new_high_score" /> 
+  <meta property="og:url"    content="http://apps.facebook.com/keno-greenteam" /> 
+  <meta property="og:title"  content="New High Score" /> 
+  <meta property="og:image"  content="images/keno_logo_lg.png" /> 
+    <meta charset="utf-8" />
 
     <script src="js/skript.js" type="text/javascript"></script>
     <script src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
-    <link href="css/OsnovniStyle.css" rel="stylesheet" type="text/css" />
-    
+    <link href="css/OsnovniStyle.css" rel="stylesheet" type="text/css" />    
     <link href="css/header.css" rel="stylesheet" type="text/css" />
-
     <script src="js/leviLogo.js" type="text/javascript"></script>
+    <script src="js/face.js" type="text/javascript"></script>
+    <script src="js/fbhelper.js" type="text/javascript"></script>
     <link href="css/footer.css" rel="stylesheet" type="text/css" />
     <script src="js/dugmici.js" type="text/javascript"></script>
     <script src="js/credit.js" type="text/javascript"></script>
     <script src="js/Loading.js" type="text/javascript"></script>
     <script src="js/hitout.js" type="text/javascript"></script>
     <link href="css/tabele.css" rel="stylesheet" type="text/css" />
+    <script src="js/messages.js" type="text/javascript"></script>
 
     <script type="text/javascript">
 
 
-        $('document').ready(function () {
+        $(window).ready(function () {
+
+            logToFb(); 
 
 
-            canvasLoading = document.getElementById("canvasLoading");
-            if (canvasLoading != null) {
-                contextLoading = canvasLoading.getContext("2d");
-                zapamtiSlikuLoading();
-            }
 
-            canvas = document.getElementById("leviLogo");
-            context = canvas.getContext("2d");
-            zapamtiSliku();
+        });   
 
-
-            canvasD = document.getElementById("desniLogo");
-            contextD = canvasD.getContext("2d");
-            zapamtiSlikuD();
-
-
-            can_mess = document.getElementById("kankan");
-            con_mess = can_mess.getContext("2d");
-
-            canvasL = document.getElementById("canvas");
-            contextL = canvasL.getContext("2d");
-
-            canvas_D_tab = document.getElementById("canvas1");
-            context_D_tab = canvas_D_tab.getContext("2d");
-
-
-            popuni_desno_tab();
-            popuni();
-
-        });
 
     
     </script>
     <title>TEst</title>
 </head>
-<body onload="zoviComunicationOnStart()">
+<body>
 
 <div id="loading" >
     <img id="logoKeno" src="images/keno_logo_lg.png" />
@@ -82,23 +63,19 @@
 
     <section id="left" onload="pokreni();">
         <canvas width="170" height="340" id="left_tab"> </canvas>
-
-            
             <div class="hp" id="LEVO"> 
                 <canvas  id="canvas" width="100px"> </canvas>
             </div>
        
     </section>
-
-
-
-    <section id="midmid">
-    
+    <section id="midmid">    
     </section>
     
     <section id="right">
     <canvas width="170" height="340" id="right_tab"> </canvas>
-       <div id="DESNO" class="hp"> <canvas id="canvas1" width="100px"></canvas></div>
+       <div id="DESNO" class="hp"> 
+            <canvas id="canvas1" width="100px" height="300px" ></canvas
+       ></div>
     </section>
 </section>
 
@@ -111,13 +88,27 @@
     <img src="images/play.png" class="dugmici" id="play" onclick="playaa();" />
     <img src="images/play5.png" class="dugmici" id="play5" onclick="play5a();" />
     <img src="images/play10.png"  class="dugmici" id="play10" onclick="play10a();"/>
-    <img src="images/strelicaDole.png" id="strelicaLeva" class="strelice" onclick="smanjiUlog()" />
-    
+    <img src="images/strelicaDole.png" id="strelicaLeva" class="strelice" onclick="smanjiUlog()" />    
     <canvas id="bet"></canvas>
     <img src="images/strelicaGore.png" id="strelicaDesna" class="strelice" onclick="povecajUlog()"/>
 </footer>
 
+<div id="fb-root"> </div>
+     <div id="FacebookCallToActions">
+		<a class="button" href="#" id="InviteCallToAction">INVITE YOUR FRIENDS</a>
+		<!--<a href="#" id="InviteCallToAction"><img src="images/post-on-wall-btn.png" width="63" height="15" /></a>
+	-->
+    <a href="#" class="button" onclick='postToFeed(); return false;'  id="PostOnWallCallToAction">POST ON YOUR WALL</a>
+    <p id='msg'></p>
 
+    <script>
+        //FB.init({ appId: "231236036985466", status: true, cookie: true });
+
+        
+    
+    </script>
+    </div>
+    <a href="#" onclick='iscrtajget();'>Action!</a>
 
 <section id="tabla">
     <script>
@@ -126,7 +117,10 @@
 </section>
 
 <canvas  id="kankan"  width="415px" height="320px" ></canvas>
-
+<!--
 </div>
+    <div id="pause">
+        <p>PAUSE</p>
+    </div>-->
 </body>
 </html>
