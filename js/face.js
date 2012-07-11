@@ -32,9 +32,7 @@ function logToFb() {
                         window.location.reload();
                     }
                     else {
-
                         init_all();
-
                     }
 
                     //                                    var request = $.ajax({

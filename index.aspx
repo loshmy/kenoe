@@ -119,10 +119,16 @@
     <a href="#" onclick='iscrtajget();'>Action!</a>
 
 
-<!--
+
 </div>
+
     <div id="pause">
-        <p>PAUSE</p>
-    </div>-->
+        
+    </div>
+
+
+
+
+
 </body>
 </html>

@@ -85,13 +85,6 @@ for (brbr = 0; brbr < 20; brbr++) {
 
     }
 
-
-
-
-
-
-
-
     //Funkcija za komunikacija sa servisom na startu i u toku igre ..
 
     function zoviComunicationOnStart() {
@@ -120,8 +113,6 @@ for (brbr = 0; brbr < 20; brbr++) {
 				korisnik.ID=Objekat.User_Id;
                 setTimeout(function () { hideLoading(); }, 1000);
             },
-
-
             error: function () {
 
                 console.log("Greska u komunikaciji!");
@@ -417,9 +408,7 @@ function smanjuj_rect() {
             $(document.getElementById("k" + array[start_i].broj)).css("background-color", "#129313");
         else
             $(document.getElementById("k" + array[start_i].broj)).css("background-color", "red");
-
         con_mess.clearRect(0, 0, can_mess.width, can_mess.height);
-
         if (start_i == 19)
             setTimeout(function () {
                 popunicredit(Dolazak.Credit);
@@ -429,8 +418,6 @@ function smanjuj_rect() {
                 $(kankan).css("visibility", "hidden");
                 blokiranje_button = false;
             }, 150);
-
-
         return;
     }
     else {
@@ -489,7 +476,6 @@ function crtaj_mid() {
                 con[(j + (i * 10))].textAlign = "center";
                 con[(j + (i * 10))].textBaseline = "middle";
                 con[(j + (i * 10))].fillText((j + (i * 10)), can.width / 2, can.height / 2);
-
             }
         }
         mid_events();
@@ -517,7 +503,6 @@ function mid_events() {
                 $(this).css("border-top", "");
                 $(this).css("border-bottom", "");
 
-
                 var id = $(this).attr('id');
 
                 var string = this.id.substring(1, 3);
@@ -527,8 +512,6 @@ function mid_events() {
                 con[this.id.substring(1, 3)].textAlign = "center";
                 con[this.id.substring(1, 3)].textBaseline = "middle";
                 con[this.id.substring(1, 3)].fillText(this.id.substring(1, 3), can.width / 2, can.height / 2);
-
-
 
                 pokreni();
                 return;
@@ -540,6 +523,7 @@ function mid_events() {
                 $(this).css("border-style", "inset");
                 $(this).css("background-color", "#87b9c2");
                 pokreni();
+                                
                 draw_coin_timeout(this.id.substring(1, 3), 0);
 
                 return;
@@ -550,41 +534,40 @@ function mid_events() {
 }
 
 function draw_coin(KOJI, koliko) {
-    if (koliko == 40) {
-        con[KOJI].clearRect(0, 0, can.width, can.height)
-        con[KOJI].font = "13pt Calibri bold";
-        con[KOJI].fillStyle = "white";
-        con[KOJI].textAlign = "center";
-        con[KOJI].textBaseline = "middle";
-        con[KOJI].fillText(KOJI, can.width / 2, can.height / 2);
-        con[KOJI].drawImage(img2, 0, 20 );
-        con[KOJI].drawImage(img2, 0, 25 );
-        con[KOJI].drawImage(img2, 0, 30 );
-        return
-    }
-    else {
-        koliko += 2;
-        con[KOJI].clearRect(0, 0, can.width, can.height)
-        con[KOJI].font = "13pt Calibri bold";
-        con[KOJI].fillStyle = "white";
-        con[KOJI].textAlign = "center";
-        con[KOJI].textBaseline = "middle";
-        con[KOJI].fillText(KOJI, can.width / 2, can.height / 2);
-        con[KOJI].drawImage(img2, 0, -10 + koliko);
-        con[KOJI].drawImage(img2, 0, -20 + koliko);
-        con[KOJI].drawImage(img2, 0, -30 + koliko);
+    if ( $(document.getElementById("k" + KOJI)).css("border-style") == "inset")
+        if (koliko == 40) {
+            con[KOJI].clearRect(0, 0, can.width, can.height)
+            con[KOJI].font = "13pt Calibri bold";
+            con[KOJI].fillStyle = "white";
+            con[KOJI].textAlign = "center";
+            con[KOJI].textBaseline = "middle";
+            con[KOJI].fillText(KOJI, can.width / 2, can.height / 2);
+            con[KOJI].drawImage(img2, 0, 20);
+            con[KOJI].drawImage(img2, 0, 25);
+            con[KOJI].drawImage(img2, 0, 30);
+            return
+        }
+        else {
+            koliko += 2;
+            con[KOJI].clearRect(0, 0, can.width, can.height)
+            con[KOJI].font = "13pt Calibri bold";
+            con[KOJI].fillStyle = "white";
+            con[KOJI].textAlign = "center";
+            con[KOJI].textBaseline = "middle";
+            con[KOJI].fillText(KOJI, can.width / 2, can.height / 2);
+            con[KOJI].drawImage(img2, 0, -10 + koliko);
+            con[KOJI].drawImage(img2, 0, -20 + koliko);
+            con[KOJI].drawImage(img2, 0, -30 + koliko);
 
-
-        draw_coin_timeout(KOJI, koliko);
-    }
-
-
+            draw_coin_timeout(KOJI, koliko);
+        }
+    else
+        return;
 }
 
 function draw_coin_timeout(KOJI,koliko) {
     setTimeout(function () {
         draw_coin(KOJI,koliko);
-
     },15);
 
 }
