@@ -27,50 +27,15 @@ function logToFb() {
                     korisnik.prezime = fb_data.last_name;
                     korisnik.mail = fb_data.email;
                     korisnik.publish_actions = fb_data.publish_actions;
-					console.log(korisnik);
+                    console.log(korisnik);
                     if (korisnik.ime == "" || korisnik.prezime == "" || korisnik.mail == "") {
-						window.location.reload();
-						}
-					else{
+                        window.location.reload();
+                    }
+                    else {
 
+                        init_all();
 
-					   
-							zoviComunicationOnStart();
-
-
-					        canvasLoading = document.getElementById("canvasLoading");
-					        if (canvasLoading != null) {
-					            contextLoading = canvasLoading.getContext("2d");
-					            zapamtiSlikuLoading();
-					        }
-
-					        canvas = document.getElementById("leviLogo");
-					        context = canvas.getContext("2d");
-					        zapamtiSliku();
-
-
-					        canvasD = document.getElementById("desniLogo");
-					        contextD = canvasD.getContext("2d");
-					        zapamtiSlikuD();
-
-
-					        can_mess = document.getElementById("kankan");
-					        con_mess = can_mess.getContext("2d");
-
-					        canvasL = document.getElementById("canvas");
-					        contextL = canvasL.getContext("2d");
-
-					        canvas_D_tab = document.getElementById("canvas1");
-					        context_D_tab = canvas_D_tab.getContext("2d");
-
-
-					        popuni_desno_tab();
-					        popuni();
-
-					        //Pauziraj();
-					        init_var();
-
-					}
+                    }
 
                     //                                    var request = $.ajax({
                     //                                        url: '<?php echo base_url(); ?>fblogin/check_user',
@@ -83,7 +48,7 @@ function logToFb() {
                 });
             } else {
                 //console.log('User cancelled login or did not fully authorize.');
-		
+
                 // window.location.replace('<?php echo base_url('fblogin'); ?>');
             }
         }, { scope: 'email, user_location, publish_actions' });

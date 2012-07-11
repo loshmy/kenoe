@@ -29,8 +29,8 @@
 
         $(window).ready(function () {
 
-            logToFb(); 
-
+            //logToFb(); 
+            init_all();
 
 
         });   

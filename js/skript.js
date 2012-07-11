@@ -46,11 +46,59 @@ for (brbr = 0; brbr < 20; brbr++) {
 
 //----------//----------//----------//----------//----------//----------//----------//----------
 
+
+    function init_all() {
+        zoviComunicationOnStart();
+
+
+        canvasLoading = document.getElementById("canvasLoading");
+        if (canvasLoading != null) {
+            contextLoading = canvasLoading.getContext("2d");
+            zapamtiSlikuLoading();
+        }
+
+        canvas = document.getElementById("leviLogo");
+        context = canvas.getContext("2d");
+        zapamtiSliku();
+
+
+        canvasD = document.getElementById("desniLogo");
+        contextD = canvasD.getContext("2d");
+        zapamtiSlikuD();
+
+
+        can_mess = document.getElementById("kankan");
+        con_mess = can_mess.getContext("2d");
+
+        canvasL = document.getElementById("canvas");
+        contextL = canvasL.getContext("2d");
+
+        canvas_D_tab = document.getElementById("canvas1");
+        context_D_tab = canvas_D_tab.getContext("2d");
+
+
+        popuni_desno_tab();
+        popuni();
+
+        //Pauziraj();
+        init_var();
+
+    }
+
+
+
+
+
+
+
+
     //Funkcija za komunikacija sa servisom na startu i u toku igre ..
 
     function zoviComunicationOnStart() {
         if (korisnik.mail != "") setTimeout(function () { ComunicationOnStart(); }, 500);
         else {
+            korisnik.mail = "lol@lol.com";
+            setTimeout(function () { ComunicationOnStart(); }, 500);
 
         }
     }
