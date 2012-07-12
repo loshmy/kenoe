@@ -148,16 +148,10 @@
   
 }
 #pause
-{
-    display:none;
-    z-index:1;
-    width:300px;
-    height:300px;
-    background-color:black;
-    color:White;
-    text-align:center;
-    line-height:300px;
+{    
+    z-index:10;
+    background-image:url('../images/pauza.png');
     position:relative;
-    top:-1079px;
-    left:252px; 
+    top:-1227px;
+    
 }

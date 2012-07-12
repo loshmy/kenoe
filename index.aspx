@@ -101,6 +101,10 @@
 
 <canvas  id="kankan"  width="415px" height="320px" ></canvas>
 
+<canvas id="pause" width="760px" height="560px" ></canvas>
+
+
+
 <div id="fb-root"> </div>
      <div id="FacebookCallToActions">
 		<a class="button" href="#" id="InviteCallToAction">INVITE YOUR FRIENDS</a>
@@ -122,9 +126,9 @@
 
 </div>
 
-    <div id="pause">
+
         
-    </div>
+    
 
 
 
