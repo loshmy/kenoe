@@ -32,7 +32,11 @@ function play5a() {
     $(kankan).css("visibility", "visible");
     if (blokiranje_button == false) {
         blokiranje_button = true;
-        start5Game();
+        brojac++;
+        koliko_igram = 5;
+        startGame();
+
+        //start5Game();
     }
 }
 
@@ -40,7 +44,11 @@ function play10a() {
     $(kankan).css("visibility", "visible");
     if (blokiranje_button == false) {
         blokiranje_button = true;
-        start10Game();
+        brojac++;
+        koliko_igram = 10;
+        startGame();
+
+        //start10Game();
     }
 }
 
