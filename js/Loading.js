@@ -37,10 +37,14 @@ function hideLoading() {
 
     var e = document.getElementById("loading");
     //e.innerHTML = null;
-    document.getElementById("loading").style.visibility = "hidden";
+
+    $(e).fadeOut("slow");
+    setTimeout(function () {
+        $(document.getElementById("osnovna")).fadeIn("slow");
+    }, 800);
+    
     document.getElementById("canvasLoading").style.visibility = "hidden";
     document.getElementById("loading").style.height = "0px";
-    document.getElementById("osnovna").style.visibility = "visible";
         
 
 }

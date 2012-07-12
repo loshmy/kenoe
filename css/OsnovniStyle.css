@@ -116,13 +116,18 @@
  #loading
 {
    width:760px;
-   height:500px;
-   background-image:url('../images/prelazDiv.jpg') ;
+   height:475px;
+   background-image:url('../images/cscs.jpg') ;
    text-align:center;
    z-index:100;
    position:absolute;
 }
 #logoKeno
+{
+    width:40%;
+    margin-top:20px;
+}
+#logokomt
 {
     width:40%;
     margin-top:20px;
@@ -145,8 +150,7 @@
 }
 #osnovna
 {
-   visibility:hidden;
-  
+    display:none; 
 }
 
 #pause

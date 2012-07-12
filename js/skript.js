@@ -118,7 +118,7 @@ for (brbr = 0; brbr < 20; brbr++) {
                 popunicredit(Objekat.Credit);	
 				credit=Objekat.Credit;
 				korisnik.ID=Objekat.User_Id;
-                setTimeout(function () { hideLoading(); }, 1000);
+                setTimeout(function () { hideLoading(); }, 3000);
             },
             error: function () {
 

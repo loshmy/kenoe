@@ -42,6 +42,7 @@
 
 <div id="loading" >
     <img id="logoKeno" src="images/keno_logo_lg.png" />
+    <img id="logokomt" src="images/komtrade.png" />
     <p></p>
     <canvas id="canvasLoading" width="102px" height="102"></canvas>
 
