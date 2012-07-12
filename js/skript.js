@@ -154,6 +154,7 @@ for (brbr = 0; brbr < 20; brbr++) {
     }
 
     function startGame() {
+        blokiranje_button = true;
         clean_game();
 
         hits = 0;
@@ -308,7 +309,7 @@ function start() {
         pauz();
         return;
     }
-
+    
     $(kankan).css("visibility", "visible");
     start_i++;
     a = document.getElementById("k" + array[start_i].broj).offsetTop;
