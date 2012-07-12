@@ -83,6 +83,10 @@ for (brbr = 0; brbr < 20; brbr++) {
         Pauziraj();
         init_var();
 
+        canvascredit = document.getElementById("credit");
+        contextcredit = canvascredit.getContext("2d");
+        popunicredit(credit);
+
     }
 
     //Funkcija za komunikacija sa servisom na startu i u toku igre ..
@@ -147,8 +151,7 @@ for (brbr = 0; brbr < 20; brbr++) {
     }
 
     function startGame() {
-        clean_game();
-        blokiranje_button = true;
+        clean_game();     
         
         hits = 0;
         var k = 0;
@@ -158,7 +161,8 @@ for (brbr = 0; brbr < 20; brbr++) {
         }
 
         if (k > 2 && bet != 0 && bet<=credit) {
-		runda++;
+            runda++;
+
             pokreni(); // pokretanje leve tabele
             popuni_desno_tab(); // pokretanje desne tabele
             $.ajax(
@@ -174,11 +178,13 @@ for (brbr = 0; brbr < 20; brbr++) {
             },
             error: function () {
                 console.log("Communication Error!");
+                   
             }
         });
         }
 	else {
-	blokiranje_button=false;
+	    blokiranje_button = false;
+        $(kankan).css("visibility", "hidden");
 }
     }
 
@@ -188,6 +194,7 @@ function start5Game() {
     console.log("startovano "+brojac+" igre");
     setTimeout(function () {
         if (brojac < 6) {
+            clean_game();
             startGame();
             setTimeout(function () { start5Game(); }, 20000);
         }
@@ -202,6 +209,7 @@ function start10Game() {
     console.log("startovano 5 igre");
     setTimeout(function () {
         if (brojac < 11) {
+            clean_game();
             startGame();
             setTimeout(function () { start10Game(); }, 20000);
         }
@@ -415,8 +423,17 @@ function smanjuj_rect() {
         if (start_i == 19)
             setTimeout(function () {
                 popunicredit(Dolazak.Credit);
-				credit=Dolazak.Credit;
-                upisi2(runda, hits); 
+                credit = Dolazak.Credit;
+                var brSelektovanih=0;
+                for (i = 0; i < niz_mid.length; i++) {
+                    if (niz_mid[i] != "") { niz_br[brSelektovanih] = (niz_mid[i][1] + niz_mid[i][2]); niz_br[brSelektovanih] = parseInt(niz_br[brSelektovanih]); brSelektovanih++; }
+                }
+                console.log("ADRUGI PUT");
+                if ((hits == 3 && brSelektovanih == 3) || (hits == 4 && brSelektovanih == 4) || (hits >= 4 && brSelektovanih == 5) || (hits >= 5)) {
+                    iscrtajget();
+                    PlaceYourBet("YOU WON!!");
+                }
+                upisi2(runda, hits);
                 clean_game();
                 $(kankan).css("visibility", "hidden");
                 blokiranje_button = false;
@@ -598,10 +615,10 @@ function draw_coin_timeout(KOJI,koliko) {
 
 function ispisi() {
     for (i=0; i < 10; i++) {
-        console.log(niz_mid[i]);
-        
+        console.log(niz_mid[i]);        
     }
 }
+
 function Pauziraj() {
     $(window).blur(function () {
         $("#pause").css("display", "block");

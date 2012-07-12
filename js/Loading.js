@@ -2,8 +2,6 @@
 
 
 function zapamtiSlikuLoading() {
-
-    console.log("zapamti sliku");
     BcanvasLoading = document.createElement("canvas");
     BcontextLoading = BcanvasLoading.getContext("2d");
     BcanvasLoading.id="loadingCanvas";

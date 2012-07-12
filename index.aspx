@@ -29,16 +29,14 @@
 
         $(window).ready(function () {
 
-            //logToFb(); 
-            init_all();
+            logToFb(); 
+            //init_all();
 
 
         });   
-
-
     
     </script>
-    <title>TEst</title>
+    <title>OVO JE APLIKACIJA :DDD</title>
 </head>
 <body>
 
@@ -101,26 +99,23 @@
 
 <canvas  id="kankan"  width="415px" height="320px" ></canvas>
 
+<div id="fb-root"> 
+<div id="fb_dugmad-preroot">
+    <div id="fb-call" class="fb-buttons">
+        <a class="button" href="#" id="InviteCallToAction">INVITE YOUR FRIENDS</a>
+    </div>
+    <div id="fb-post" class="fb-buttons">
+		<!--<a href="#" id="InviteCallToAction"><img src="images/post-on-wall-btn.png" width="63" height="15" /></a>-->
+        <a href="#" class="button" onclick='postToFeed(); return false;'  id="PostOnWallCallToAction">POST ON YOUR WALL</a>    
+    </div>
+</div>
+</div>
 <canvas id="pause" width="760px" height="560px" ></canvas>
-
-
-
-<div id="fb-root"> </div>
-     <div id="FacebookCallToActions">
-		<a class="button" href="#" id="InviteCallToAction">INVITE YOUR FRIENDS</a>
-		<!--<a href="#" id="InviteCallToAction"><img src="images/post-on-wall-btn.png" width="63" height="15" /></a>
-	-->
-    <a href="#" class="button" onclick='postToFeed(); return false;'  id="PostOnWallCallToAction">POST ON YOUR WALL</a>
-    <p id='msg'></p>
 
     <script>
         //FB.init({ appId: "231236036985466", status: true, cookie: true });
-
-        
-    
     </script>
-    </div>
-    <a href="#" onclick='iscrtajget();'>Action!</a>
+    
 
 
 

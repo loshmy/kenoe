@@ -39,7 +39,7 @@ function upisi(h, p) {
 
     contextL.beginPath()
     contextL.strokeStyle = "white";
-    contextL.strokeText(p*bet, canvasL.width - 37, y1);
+    contextL.strokeText(p*bet, canvasL.width - 49, y1);
     y1 += 18;
 }
 function pokreni() {

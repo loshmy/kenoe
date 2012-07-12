@@ -54,7 +54,7 @@ function gameOver() {
 }
 
 
-function PlaceYouBet() {
+function PlaceYourBet(strpor) {
     i++;
     con_mess.clearRect(0, 0, can_mess.width, can_mess.height);
     $(kankan).css("visibility", "visible");
@@ -66,9 +66,9 @@ function PlaceYouBet() {
     con_mess.textBaseline = "middle";
     con_mess.fillStyle = 'white';
     con_mess.font = i + "px Impact";
-    con_mess.fillText("PLEASE, PLACE \n YOUR BETS!", kor_cx, kor_cy);
+    con_mess.fillText(strpor, kor_cx, kor_cy);
     con_mess.lineWidth = 2;
-    con_mess.strokeText("PLEASE, PLACE \n YOUR BETS!", kor_cx, kor_cy);
+    con_mess.strokeText(strpor, kor_cx, kor_cy);
     con_mess.lineWidth = 1;
     setTimeout(function () {
         if (i < 35) {
@@ -78,7 +78,7 @@ function PlaceYouBet() {
 
     setTimeout(function () {
         if (i < 35) {
-            PlaceYouBet();
+            PlaceYourBet(strpor);
         }
         else {
             resetuj();

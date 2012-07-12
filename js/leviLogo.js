@@ -31,8 +31,6 @@ function zapamtiSliku() {
     ship.onload = function () {
         Bcontext.drawImage(ship, 0, 0);
         imageData = Bcontext.getImageData(0, 0, Bcanvas.width, Bcanvas.height);
-        console.log(imageData);
-
         animacija(0);
 
     };
@@ -83,7 +81,6 @@ function zapamtiSlikuD() {
     ship.onload = function () {
         BcontextD.drawImage(ship, 0, 0);
         imageDataD = BcontextD.getImageData(0, 0, BcanvasD.width, BcanvasD.height);
-        console.log(imageData);
 
         animacijaD(0);
 

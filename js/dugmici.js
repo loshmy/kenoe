@@ -21,19 +21,25 @@ function clearr() {
 }
 
 function playaa() {
+    $(kankan).css("visibility", "visible");
     if (blokiranje_button == false) {
+        blokiranje_button = true;
         startGame();
     }
 }
 
 function play5a() {
+    $(kankan).css("visibility", "visible");
     if (blokiranje_button == false) {
+        blokiranje_button = true;
         start5Game();
     }
 }
 
 function play10a() {
+    $(kankan).css("visibility", "visible");
     if (blokiranje_button == false) {
+        blokiranje_button = true;
         start10Game();
     }
 }

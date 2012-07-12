@@ -3,13 +3,6 @@
 var canvascredit;
 var contextcredit;
 
-$('document').ready(function () {
-    canvascredit = document.getElementById("credit");
-    contextcredit = canvascredit.getContext("2d");
-
-    popunicredit(credit);
-
-});
 
 function popunicredit(credit) {
     contextcredit.beginPath();

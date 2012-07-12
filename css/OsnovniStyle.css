@@ -147,11 +147,62 @@
    visibility:hidden;
   
 }
+
 #pause
 {    
     display:none;
-    z-index:10;
+    z-index:55;
     background-image:url('../images/pauza.png');
     position:relative;
-    top:-1227px; 
+    top:-1282px;
+}
+
+#fb-root 
+{    
+    border-style:solid;
+    border-width:2px;
+    top:-668px;      
+    height:50px;
+    position:relative;
+    text-align:center;   
+}
+.fb-buttons
+{    
+    float:left;
+    width:200px;      
+    height:40px;
+    background-color:#015666;
+    border-radius: 5px; 
+    
+    
+}
+
+#fb_dugmad-preroot
+{
+    padding:5px;
+    margin-left:auto;
+    margin-right:auto; 
+    width:420px;
+}
+
+.fb-buttons a
+{
+    color:White;
+    text-decoration:none;
+    font-family:Impact;
+    line-height:40px;
+}
+#fb-call
+{
+    margin-right:10px;
+}
+#fb-post
+{
+    margin-left:10px;
+}
+
+
+.fb-buttons:hover
+{
+    background-color:#87b9c2;
 }
