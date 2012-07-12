@@ -1,4 +1,4 @@
-﻿
+
 var Objekat;
 var can_left;
 var con_left;
@@ -80,7 +80,7 @@ for (brbr = 0; brbr < 20; brbr++) {
         popuni_desno_tab();
         popuni();
 
-        //Pauziraj();
+        Pauziraj();
         init_var();
 
     }
@@ -121,7 +121,7 @@ for (brbr = 0; brbr < 20; brbr++) {
 
         });
 
-
+	
     }
     function clean_game() {
         
@@ -149,7 +149,7 @@ for (brbr = 0; brbr < 20; brbr++) {
     function startGame() {
         clean_game();
         blokiranje_button = true;
-        runda++;
+        
         hits = 0;
         var k = 0;
 
@@ -157,7 +157,8 @@ for (brbr = 0; brbr < 20; brbr++) {
             if (niz_mid[i] != "") { niz_br[k] = (niz_mid[i][1] + niz_mid[i][2]); niz_br[k] = parseInt(niz_br[k]); k++; }
         }
 
-        if (k > 2 && bet != 0) {
+        if (k > 2 && bet != 0 && bet<=credit) {
+		runda++;
             pokreni(); // pokretanje leve tabele
             popuni_desno_tab(); // pokretanje desne tabele
             $.ajax(
@@ -176,7 +177,9 @@ for (brbr = 0; brbr < 20; brbr++) {
             }
         });
         }
-
+	else {
+	blokiranje_button=false;
+}
     }
 
 function start5Game() {
@@ -296,7 +299,8 @@ function start() {
 }
 
 function start_ponovi() {
-    if (start_i == 19) { return; }
+if(flag===false){start_i--;prikaz();pauz();}    
+else if (start_i == 19) { return; }
         
     else {
         setTimeout(function () {
@@ -355,11 +359,10 @@ function ponovi_rect() {
 function ponovi_rect_s() {
 
     setTimeout(function () {
-        /*if (flag === false) { pauz(); }
-        else {*/
+        
             con_mess.clearRect(0, 0, can_mess.width, can_mess.height);
             smanjuj_rect();
-        //}
+        
     }, 0);
 
 }
@@ -599,7 +602,7 @@ function ispisi() {
         
     }
 }
-/*function Pauziraj() {
+function Pauziraj() {
     $(window).blur(function () {
         $("#pause").css("display", "block");
         flag = false;
@@ -609,4 +612,3 @@ function ispisi() {
         flag = true;
     });
 };
-*/

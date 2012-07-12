@@ -1,4 +1,4 @@
-﻿  body
+  body
     {
         margin-left:auto;
         margin-right:auto;
@@ -149,9 +149,9 @@
 }
 #pause
 {    
+    display:none;
     z-index:10;
     background-image:url('../images/pauza.png');
     position:relative;
-    top:-1227px;
-    
+    top:-1227px; 
 }
