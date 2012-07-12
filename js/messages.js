@@ -4,7 +4,7 @@
 var kor_cx;
 var kor_cy;
 var lose = 0;
-var i = 0;
+var ibr = 0;
 
 function init_var() {
     kor_cx = can_mess.width / 2;
@@ -12,7 +12,7 @@ function init_var() {
 }
 
 function resetuj() {
-    i = 0;
+    ibr = 0;
     won = 0;
     lose = 0;
 }
@@ -33,7 +33,6 @@ function gameOver() {
     con_mess.lineWidth = 1;
 
     setTimeout(function () {
-
         if (lose < 4) {
             con_mess.clearRect(0, 0, can_mess.width, can_mess.height);
         }
@@ -49,13 +48,12 @@ function gameOver() {
     }, 500);
 
     setTimeout(function () {
-        $(kankan).css("visibility", "");
     }, 2300);
 }
 
 
 function PlaceYourBet(strpor) {
-    i++;
+    ibr++;
     con_mess.clearRect(0, 0, can_mess.width, can_mess.height);
     $(kankan).css("visibility", "visible");
 
@@ -65,19 +63,19 @@ function PlaceYourBet(strpor) {
     con_mess.textAlign = 'center';
     con_mess.textBaseline = "middle";
     con_mess.fillStyle = 'white';
-    con_mess.font = i + "px Impact";
+    con_mess.font = ibr + "px Impact";
     con_mess.fillText(strpor, kor_cx, kor_cy);
     con_mess.lineWidth = 2;
     con_mess.strokeText(strpor, kor_cx, kor_cy);
     con_mess.lineWidth = 1;
     setTimeout(function () {
-        if (i < 35) {
+        if (ibr < 35) {
             con_mess.clearRect(0, 0, can_mess.width, can_mess.height);
         }
     }, 1);
 
     setTimeout(function () {
-        if (i < 35) {
+        if (ibr < 35) {
             PlaceYourBet(strpor);
         }
         else {

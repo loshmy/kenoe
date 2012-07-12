@@ -18,30 +18,30 @@ background-image: -webkit-gradient(
 
 #clear
 {    
-    left:-542px;
-    top:9px;   
+    left:-545px;
+    top:29px;   
 }
 
 #play 
 {
-    left:155px;
+    left:192px;
 }
 
 #play5
 {
-    left:155px;
+    left:192px;
 }
 
 #play10
 {   
-    left:155px;
+    left:192px;
 }
 
 
 .dugmici
 {
     position:relative;
-    top:-50px;
+    top:-30px;
     width:120px;    
 }
 
@@ -102,8 +102,8 @@ width:120px;
 height:50px;
 z-index:0;
 position:relative;
-top:-50px;
-left:150px;
+top:-30px;
+left:180px;
 -webkit-box-shadow: 2px 2px 2px white;
 
 border:2px solid White;
@@ -112,20 +112,20 @@ border:2px solid White;
 #strelicaLeva
 {
   
-    left:180px;
+    left:210px;
 }
 
 #strelicaDesna
 {
   
-    left:120px;
+    left:150px;
 }
 
 .strelice 
 {
      position:relative;
     width:50px;
-    top:-50px;
+    top:-30px;
     z-index:10;
 }
 

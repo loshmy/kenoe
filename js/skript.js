@@ -268,7 +268,10 @@ function provera_count() {
         startGame();
     }
     else if ((koliko_igram == 5 && brojac == 6) || (koliko_igram == 10 && brojac == 11)) {
+        blokiranje_button = false;
+        clean_game();
         resetGame();
+        $(kankan).css("visibility", "hidden");
     } 
 }
 
@@ -279,7 +282,23 @@ function start() {
         return;
     }
     if (start_i == 19) {
-        return; 
+
+        popunicredit(Dolazak.Credit);
+        credit = Dolazak.Credit;
+        var brSelektovanih = 0;
+        for (i = 0; i < niz_mid.length; i++) {
+            if (niz_mid[i] != "") { niz_br[brSelektovanih] = (niz_mid[i][1] + niz_mid[i][2]); niz_br[brSelektovanih] = parseInt(niz_br[brSelektovanih]); brSelektovanih++; }
+        }
+        upisi2(runda, hits);
+        if ((hits >= 1 && brSelektovanih == 3) || (hits == 4 && brSelektovanih == 4) || (hits >= 4 && brSelektovanih == 5) || (hits >= 5)) {
+            //iscrtajget();
+            PlaceYourBet("YOU WON!!");
+
+        }
+        setTimeout(function () {
+            provera_count();
+            return;
+        }, 2900);
     }
 
 
@@ -287,10 +306,7 @@ function start() {
     start_i++;
     a = document.getElementById("k" + array[start_i].broj).offsetTop;
     b = document.getElementById("k" + array[start_i].broj).offsetLeft;
-
     prikaz();
-
-   
 
 }
 
@@ -400,21 +416,7 @@ function smanjuj_rect() {
             $(document.getElementById("k" + array[start_i].broj)).css("background-color", "red");
         con_mess.clearRect(0, 0, can_mess.width, can_mess.height);
 
-        if (start_i == 19)
-            setTimeout(function () {
-                popunicredit(Dolazak.Credit);
-                credit = Dolazak.Credit;
-                var brSelektovanih = 0;
-                for (i = 0; i < niz_mid.length; i++) {
-                    if (niz_mid[i] != "") { niz_br[brSelektovanih] = (niz_mid[i][1] + niz_mid[i][2]); niz_br[brSelektovanih] = parseInt(niz_br[brSelektovanih]); brSelektovanih++; }
-                }
-                
-                upisi2(runda, hits);
-                clean_game();
-                $(kankan).css("visibility", "hidden");
-                blokiranje_button = false;
-                provera_count();
-            }, 1);
+        
         start();
     }
     else {
