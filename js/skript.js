@@ -190,34 +190,6 @@ for (brbr = 0; brbr < 20; brbr++) {
         }
     }
 
-/*function start5Game() {
-    brojac++;
-    setTimeout(function () {
-        if (brojac < 6) {
-            clean_game();
-            startGame();
-            setTimeout(function () { start5Game(); }, 20700);
-        }
-        else {
-            resetGame();
-        }
-    }, 500);
-}
-function start10Game() {
-    brojac++;
-    setTimeout(function () {
-        if (brojac < 11) {
-            clean_game();
-            startGame();
-            setTimeout(function () { start10Game(); }, 20700);
-        }
-        else {
-            resetGame();
-        }
-    }, 500);
-}*/
-
-
 function proveriDobitke() {
     var niz_dob = new Array();
     var s, l = 0;
@@ -274,9 +246,6 @@ function clean_v2() {
             $(can).css("border-bottom", "");
             for (var brbrbr = 0; brbrbr < 10; brbrbr++)
                 niz_mid[brbrbr] = "";
-
-            
-                
         }
     }
     pokreni();
@@ -309,7 +278,11 @@ function start() {
         pauz();
         return;
     }
-    
+    if (start_i == 19) {
+        return; 
+    }
+
+
     $(kankan).css("visibility", "visible");
     start_i++;
     a = document.getElementById("k" + array[start_i].broj).offsetTop;
@@ -317,24 +290,11 @@ function start() {
 
     prikaz();
 
-    start_ponovi();
+   
 
 }
 
-function start_ponovi() {
-    /*if (flag === false) {
-        start_i--;
-        prikaz();
-        pauz();
-}    
-else */if (start_i == 19) { return; }
-        
-    else {
-        setTimeout(function () {
-            start();            
-        }, 1000);
-    }
-}
+
 
 function prikaz() {
        
@@ -390,7 +350,7 @@ function ponovi_rect_s() {
             con_mess.clearRect(0, 0, can_mess.width, can_mess.height);
             smanjuj_rect();
         
-    }, 0);
+    }, 1);
 
 }
 
@@ -407,7 +367,7 @@ function smanjuj_rect() {
         pos_b += 14;
     }
 
-    con_mess.rect(pos_b, pos_a, mess_x-3, mess_y-3);
+    con_mess.rect(pos_b, pos_a, mess_x - 3, mess_y - 3);
     con_mess.fillStyle = array[start_i].boja;
     con_mess.fill();
     con_mess.font = mess_x / 2 + "pt Calibri";
@@ -439,6 +399,7 @@ function smanjuj_rect() {
         else
             $(document.getElementById("k" + array[start_i].broj)).css("background-color", "red");
         con_mess.clearRect(0, 0, can_mess.width, can_mess.height);
+
         if (start_i == 19)
             setTimeout(function () {
                 popunicredit(Dolazak.Credit);
@@ -447,62 +408,29 @@ function smanjuj_rect() {
                 for (i = 0; i < niz_mid.length; i++) {
                     if (niz_mid[i] != "") { niz_br[brSelektovanih] = (niz_mid[i][1] + niz_mid[i][2]); niz_br[brSelektovanih] = parseInt(niz_br[brSelektovanih]); brSelektovanih++; }
                 }
-                if ((hits == 3 && brSelektovanih == 3) || (hits == 4 && brSelektovanih == 4) || (hits >= 4 && brSelektovanih == 5) || (hits >= 5)) {
-                    //iscrtajget();
-                    PlaceYourBet("YOU WON!!");
-                }
+                
                 upisi2(runda, hits);
                 clean_game();
                 $(kankan).css("visibility", "hidden");
                 blokiranje_button = false;
                 provera_count();
-            }, 150);
-        return;
+            }, 1);
+        start();
     }
     else {
-        /*if(array[start_i].broj%10==0){
-
-            pos_a = a;
-            pos_b = b;
-            con_mess.clearRect(0, 0, can_mess.width, can_mess.height);
-            con_mess.rect(pos_b, pos_a, mess_x - 3, mess_y - 3);
-            con_mess.fillStyle = array[start_i].boja;
-            con_mess.fill();
-
-            con_mess.font = mess_x / 2 + "pt Calibri";
-            con_mess.textAlign = "center";
-            con_mess.textBaseline = "middle";
-            con_mess.fillStyle = "white";
-            con_mess.fillText(array[start_i].broj, pos_b + 20, pos_a + 20);
-            if (array[start_i].boja == "#129313")
-                $(document.getElementById("k" + array[start_i].broj)).css("background-color", "#129313");
-            else
-                $(document.getElementById("k" + array[start_i].broj)).css("background-color", "red");
-
-            con_mess.clearRect(0, 0, can_mess.width, can_mess.height);
-            return;
-        }
-        else{*/
         ponovi_rect_s();
-        
     }
 }
 
 function pauz() {
-   /* do {  }
-    while (flag == false);
-    start();
-    */
-
     setTimeout(function () {
         if (flag == false) {
             pauz();
         }
         else {
             start();
-
         }
-    }, 0);
+    },1);
 }
 
 
