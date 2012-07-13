@@ -49,13 +49,13 @@ function hideLoading() {
     setTimeout(function () {
 
         $(document.getElementById("tabla")).fadeIn(2000);
-        $(document.getElementsByTagName("footer")).fadeIn(2000);
 
         setTimeout(function () {
             $(document.getElementById("LEVO")).slideDown("slow");
             $(document.getElementById("DESNO")).slideDown("slow");
             $(document.getElementById("fb-root")).slideDown("slow");
-
+            $(document.getElementById("credit")).fadeIn(2000);
+            $(document.getElementsByTagName("footer")).fadeIn(2000);
         }, 200);
     }, 2000);
 

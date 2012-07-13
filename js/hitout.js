@@ -90,7 +90,7 @@ function popuni_desno_tab() {
 
 function upisi2(h, p) {
 
-    if (h > 14) {
+    if (h == 14 || h==28 || h == 42 || h==56 || h==70) {
         context_D_tab.clearRect(0, 0, canvas_D_tab.width, canvas_D_tab.height);
         popuni_desno_tab();
         y2 = 48;

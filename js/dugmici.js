@@ -35,8 +35,6 @@ function play5a() {
         brojac++;
         koliko_igram = 5;
         startGame();
-
-        //start5Game();
     }
 }
 
@@ -47,8 +45,6 @@ function play10a() {
         brojac++;
         koliko_igram = 10;
         startGame();
-
-        //start10Game();
     }
 }
 

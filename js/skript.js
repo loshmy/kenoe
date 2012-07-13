@@ -79,6 +79,8 @@ for (brbr = 0; brbr < 20; brbr++) {
         canvas_D_tab = document.getElementById("canvas1");
         context_D_tab = canvas_D_tab.getContext("2d");
 
+        can_poruka = document.getElementById("pause");
+        con_poruka = can_poruka.getContext("2d");
 
         popuni_desno_tab();
         popuni();
@@ -196,8 +198,7 @@ function proveriDobitke() {
     niz_dob = Dolazak.Izvuceni.split(";", 20);
      for (s = 0; s < 20; s++) {
     array[s].broj = parseInt(niz_dob[s]); 
-    }
-  
+    }  
     odradiProveru(l);
     
 }
@@ -217,7 +218,6 @@ function odradiProveru(br) {
                 console.log(array[znak].boja + " " + array[znak].broj);
             }
             start();
-
             // if (brojac === 0) { gameStarted = false; }
             setTimeout(function () { clean_mid_can(); }, 15000);
         }
@@ -257,43 +257,49 @@ function clean_mid_can() {
 //--------------CANVAS MID MESSAGE
 
 function provera_count() {
+    clean_game();
     if (koliko_igram == 5 && brojac < 6 && brojac != 0) {
         brojac++;
-        clean_game();
         startGame();
     }
     else if (koliko_igram == 10 && brojac < 11 && brojac != 0) {
         brojac++;
-        clean_game();
         startGame();
     }
     else if ((koliko_igram == 5 && brojac == 6) || (koliko_igram == 10 && brojac == 11)) {
-        blokiranje_button = false;
-        clean_game();
         resetGame();
+        blokiranje_button = false;
         $(kankan).css("visibility", "hidden");
-    } 
+    }
+    else {
+        blokiranje_button = false;
+        $(kankan).css("visibility", "hidden");
+    }
 }
-
-
 function start() {
     if (flag === false) {
         pauz();
         return;
     }
     if (start_i == 19) {
-
         popunicredit(Dolazak.Credit);
         credit = Dolazak.Credit;
         var brSelektovanih = 0;
         for (i = 0; i < niz_mid.length; i++) {
             if (niz_mid[i] != "") { niz_br[brSelektovanih] = (niz_mid[i][1] + niz_mid[i][2]); niz_br[brSelektovanih] = parseInt(niz_br[brSelektovanih]); brSelektovanih++; }
         }
+        if (hits == 1)
+            PlaceYourBet("SPLENDID!");
         upisi2(runda, hits);
-        if ((hits >= 1 && brSelektovanih == 3) || (hits == 4 && brSelektovanih == 4) || (hits >= 4 && brSelektovanih == 5) || (hits >= 5)) {
+        if ((hits >= 2 && brSelektovanih == 3) || (hits == 4 && brSelektovanih == 4) || (hits >= 4 && brSelektovanih == 5) || (hits >= 5)) {
             //iscrtajget();
-            PlaceYourBet("YOU WON!!");
-
+            if (hits ==6 )
+                PlaceYourBet("SPLENDID!");
+            else if (hits == 7)
+                PlaceYourBet("STRIKE!");
+            else if (hits >= 8)
+                PlaceYourBet("JACKPOT!");
+            
         }
         setTimeout(function () {
             provera_count();
@@ -360,12 +366,9 @@ function ponovi_rect() {
 }
 
 function ponovi_rect_s() {
-
-    setTimeout(function () {
-        
+    setTimeout(function () {        
             con_mess.clearRect(0, 0, can_mess.width, can_mess.height);
-            smanjuj_rect();
-        
+            smanjuj_rect();        
     }, 1);
 
 }

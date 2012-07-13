@@ -31,14 +31,14 @@ background-image: -webkit-gradient(
 #credit
 {
  
-
+display:none;
 position:relative;
 top:-30px;
 border:3px solid White;
- border-radius: 20px;
+border-radius: 20px;
    
    
-    background-image: linear-gradient(bottom, rgb(10,118,1) 20%, rgb(36,154,27) 60%, rgb(65,185,54) 80%);
+background-image: linear-gradient(bottom, rgb(10,118,1) 20%, rgb(36,154,27) 60%, rgb(65,185,54) 80%);
 background-image: -o-linear-gradient(bottom, rgb(10,118,1) 20%, rgb(36,154,27) 60%, rgb(65,185,54) 80%);
 background-image: -moz-linear-gradient(bottom, rgb(10,118,1) 20%, rgb(36,154,27) 60%, rgb(65,185,54) 80%);
 background-image: -webkit-linear-gradient(bottom, rgb(10,118,1) 20%, rgb(36,154,27) 60%, rgb(65,185,54) 80%);
