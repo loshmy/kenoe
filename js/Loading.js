@@ -41,8 +41,25 @@ function hideLoading() {
     $(e).fadeOut("slow");
     setTimeout(function () {
         $(document.getElementById("osnovna")).fadeIn("slow");
+
     }, 800);
+
+
     
+    setTimeout(function () {
+
+        $(document.getElementById("tabla")).fadeIn(2000);
+        $(document.getElementsByTagName("footer")).fadeIn(2000);
+
+        setTimeout(function () {
+            $(document.getElementById("LEVO")).slideDown("slow");
+            $(document.getElementById("DESNO")).slideDown("slow");
+            $(document.getElementById("fb-root")).slideDown("slow");
+
+        }, 200);
+    }, 2000);
+
+
     document.getElementById("canvasLoading").style.visibility = "hidden";
     document.getElementById("loading").style.height = "0px";
         

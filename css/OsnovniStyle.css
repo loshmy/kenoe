@@ -82,9 +82,10 @@
         height:320px;
         border-style:solid;
         border-width:3px;
-        border-color:White;
+        border-color:White;        
+        padding-left:10px;
+        display:none;
         
-        padding-left:10px
         }
     .mid_broj
     {   
@@ -96,7 +97,7 @@
         float:left;      
         border-style:solid;
         border-width:2px;
-        background-color:#015666;
+        background-color:#015666;  
     }
     
     #kankan
@@ -106,7 +107,7 @@
         height:330px;
         position:relative;  
         top:-779px;
-        left:172px;       
+        left:172px;      
         
     }
     
@@ -169,7 +170,8 @@
     top:-668px;      
     height:50px;
     position:relative;
-    text-align:center;   
+    text-align:center;
+    display:none;  
 }
 .fb-buttons
 {    

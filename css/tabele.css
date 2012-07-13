@@ -26,6 +26,7 @@
       position:relative;
       top:-350px;
       left:10px;
+      display:none; 
   }
   
   
@@ -34,4 +35,5 @@
       position:relative;
       top:-350px;
       left:35px;
+      display:none; 
   }

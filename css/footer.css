@@ -1,6 +1,7 @@
 ﻿footer 
 {
   
+        display:none; 
 background-image: linear-gradient(top, rgb(0,0,0) 7%, rgb(0,102,32) 96%);
 background-image: -o-linear-gradient(top, rgb(0,0,0) 7%, rgb(0,102,32) 96%);
 background-image: -moz-linear-gradient(top, rgb(0,0,0) 7%, rgb(0,102,32) 96%);
